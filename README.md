@@ -1,6 +1,10 @@
 # LearnJava
+
 Notes of learning Java
 
-看博客请移步：
+gitbook地址：
 
-> https://wangjun-scu.gitbooks.io/learnjava/content/
+> [https://wangjun-scu.gitbooks.io/learnjava/content/](https://wangjun-scu.gitbooks.io/learnjava/content/)
+
+
+
