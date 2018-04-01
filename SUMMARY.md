@@ -8,8 +8,6 @@
   * [JVM学习](jvmxue-xi.md)
     * [自己动手编译OPENJDK](技术学习/JVM学习/自己动手编译OPENJDK.md)
 
-## test
-
 * [开发](test/kai-fa.md)
   * 小程序
     * [小程序开发问题总结](开发/小程序/小程序开发问题总结.md)
