@@ -1,7 +1,13 @@
-#Java实现单例的5种方式
+# Java实现单例的5种方式
+
 ### 1. 什么是单例模式
 
-单例模式指的是在应用整个生命周期内只能存在一个实例。单例模式是一种被广泛使用的设计模式。他有很多好处，能够避免实例对象的重复创建，减少创建实例的系统开销，节省内存。
+单例模式指的是在应用整个生命周期内只能存在一个实例。单例模式是一种被广泛使用的设计模式。他有很多好处，能够避免实例对象的重复创建，减少创建实例的系统开销，节省内存。  
+单例模式的要求有三点：
+
+* 某个类只能有一个实例
+* 它必须自行创建这个实例
+* 他必须自行向整个系统提供整个实例
 
 ### 2. 单例模式和静态类的区别
 
@@ -25,14 +31,14 @@
 
 ```java
 class SingletonHungary {
-	private static SingletonHungary singletonHungary = new SingletonHungary();
-	//将构造器设置为private禁止通过new进行实例化
-	private SingletonHungary() {
-		
-	}
-	public static SingletonHungary getInstance() {
-		return singletonHungary;
-	}
+    private static SingletonHungary singletonHungary = new SingletonHungary();
+    //将构造器设置为private禁止通过new进行实例化
+    private SingletonHungary() {
+
+    }
+    public static SingletonHungary getInstance() {
+        return singletonHungary;
+    }
 }
 ```
 
@@ -45,49 +51,49 @@ class SingletonHungary {
 ```java
 // 单例模式的懒汉实现1--线程不安全
 class SingletonLazy1 {
-	private static SingletonLazy1 singletonLazy;
+    private static SingletonLazy1 singletonLazy;
 
-	private SingletonLazy1() {
+    private SingletonLazy1() {
 
-	}
+    }
 
-	public static SingletonLazy1 getInstance() {
-		if (null == singletonLazy) {
-			try {
-				// 模拟在创建对象之前做一些准备工作
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-			singletonLazy = new SingletonLazy1();
-		}
-		return singletonLazy;
-	}
+    public static SingletonLazy1 getInstance() {
+        if (null == singletonLazy) {
+            try {
+                // 模拟在创建对象之前做一些准备工作
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            singletonLazy = new SingletonLazy1();
+        }
+        return singletonLazy;
+    }
 }
 ```
 
 我们模拟10个异步线程测试一下：
 
-```java 
+```java
 public class SingletonLazyTest {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		Thread2[] ThreadArr = new Thread2[10];
-		for (int i = 0; i < ThreadArr.length; i++) {
-			ThreadArr[i] = new Thread2();
-			ThreadArr[i].start();
-		}
-	}
+        Thread2[] ThreadArr = new Thread2[10];
+        for (int i = 0; i < ThreadArr.length; i++) {
+            ThreadArr[i] = new Thread2();
+            ThreadArr[i].start();
+        }
+    }
 
 }
 
 // 测试线程
 class Thread2 extends Thread {
-	@Override
-	public void run() {
-		System.out.println(SingletonLazy1.getInstance().hashCode());
-	}
+    @Override
+    public void run() {
+        System.out.println(SingletonLazy1.getInstance().hashCode());
+    }
 }
 ```
 
@@ -114,24 +120,24 @@ class Thread2 extends Thread {
 // 单例模式的懒汉实现2--线程安全
 // 通过设置同步方法，效率太低，整个方法被加锁
 class SingletonLazy2 {
-	private static SingletonLazy2 singletonLazy;
+    private static SingletonLazy2 singletonLazy;
 
-	private SingletonLazy2() {
+    private SingletonLazy2() {
 
-	}
+    }
 
-	public static synchronized SingletonLazy2 getInstance() {
-		try {
-			if (null == singletonLazy) {
-				// 模拟在创建对象之前做一些准备工作
-				Thread.sleep(1000);
-				singletonLazy = new SingletonLazy2();
-			}
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		return singletonLazy;
-	}
+    public static synchronized SingletonLazy2 getInstance() {
+        try {
+            if (null == singletonLazy) {
+                // 模拟在创建对象之前做一些准备工作
+                Thread.sleep(1000);
+                singletonLazy = new SingletonLazy2();
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return singletonLazy;
+    }
 }
 ```
 
@@ -159,26 +165,26 @@ class SingletonLazy2 {
 // 通过设置同步代码块，效率也太低，整个代码块被加锁
 class SingletonLazy3 {
 
-	private static SingletonLazy3 singletonLazy;
+    private static SingletonLazy3 singletonLazy;
 
-	private SingletonLazy3() {
+    private SingletonLazy3() {
 
-	}
+    }
 
-	public static SingletonLazy3 getInstance() {
-		try {
-			synchronized (SingletonLazy3.class) {
-				if (null == singletonLazy) {
-					// 模拟在创建对象之前做一些准备工作
-					Thread.sleep(1000);
-					singletonLazy = new SingletonLazy3();
-				}
-			}
-		} catch (InterruptedException e) {
-			// TODO: handle exception
-		}
-		return singletonLazy;
-	}
+    public static SingletonLazy3 getInstance() {
+        try {
+            synchronized (SingletonLazy3.class) {
+                if (null == singletonLazy) {
+                    // 模拟在创建对象之前做一些准备工作
+                    Thread.sleep(1000);
+                    singletonLazy = new SingletonLazy3();
+                }
+            }
+        } catch (InterruptedException e) {
+            // TODO: handle exception
+        }
+        return singletonLazy;
+    }
 }
 ```
 
@@ -190,26 +196,26 @@ class SingletonLazy3 {
 // 但是还是有线程安全问题
 class SingletonLazy4 {
 
-	private static SingletonLazy4 singletonLazy;
+    private static SingletonLazy4 singletonLazy;
 
-	private SingletonLazy4() {
+    private SingletonLazy4() {
 
-	}
+    }
 
-	public static SingletonLazy4 getInstance() {
-		try {
-			if (null == singletonLazy) {        //代码1
-				// 模拟在创建对象之前做一些准备工作
-				Thread.sleep(1000);
-				synchronized (SingletonLazy4.class) {
-					singletonLazy = new SingletonLazy4(); //代码2
-				}
-			}
-		} catch (InterruptedException e) {
-			// TODO: handle exception
-		}
-		return singletonLazy;
-	}
+    public static SingletonLazy4 getInstance() {
+        try {
+            if (null == singletonLazy) {        //代码1
+                // 模拟在创建对象之前做一些准备工作
+                Thread.sleep(1000);
+                synchronized (SingletonLazy4.class) {
+                    singletonLazy = new SingletonLazy4(); //代码2
+                }
+            }
+        } catch (InterruptedException e) {
+            // TODO: handle exception
+        }
+        return singletonLazy;
+    }
 }
 ```
 
@@ -239,28 +245,28 @@ class SingletonLazy4 {
 //DCL 也是大多数多线程结合单例模式使用的解决方案
 class SingletonLazy5 {
 
-	private static SingletonLazy5 singletonLazy;
+    private static SingletonLazy5 singletonLazy;
 
-	private SingletonLazy5() {
+    private SingletonLazy5() {
 
-	}
+    }
 
-	public static SingletonLazy5 getInstance() {
-		try {
-			if (null == singletonLazy) {
-				// 模拟在创建对象之前做一些准备工作
-				Thread.sleep(1000);
-				synchronized (SingletonLazy5.class) {
-					if(null == singletonLazy) {
-						singletonLazy = new SingletonLazy5();
-					}
-				}
-			}
-		} catch (InterruptedException e) {
-			// TODO: handle exception
-		}
-		return singletonLazy;
-	}
+    public static SingletonLazy5 getInstance() {
+        try {
+            if (null == singletonLazy) {
+                // 模拟在创建对象之前做一些准备工作
+                Thread.sleep(1000);
+                synchronized (SingletonLazy5.class) {
+                    if(null == singletonLazy) {
+                        singletonLazy = new SingletonLazy5();
+                    }
+                }
+            }
+        } catch (InterruptedException e) {
+            // TODO: handle exception
+        }
+        return singletonLazy;
+    }
 }
 ```
 
@@ -288,25 +294,25 @@ class SingletonLazy5 {
 ```java
 //使用静态内部类实现单例模式--线程安全
 class SingletonStaticInner {
-	private SingletonStaticInner() {
-		
-	}
-	private static class SingletonInner {
-		private static SingletonStaticInner singletonStaticInner = new SingletonStaticInner();
-	}
-	public static SingletonStaticInner getInstance() {
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return SingletonInner.singletonStaticInner;
-	}
+    private SingletonStaticInner() {
+
+    }
+    private static class SingletonInner {
+        private static SingletonStaticInner singletonStaticInner = new SingletonStaticInner();
+    }
+    public static SingletonStaticInner getInstance() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return SingletonInner.singletonStaticInner;
+    }
 }
 ```
 
-可以看到使用这种方式我们没有显式的进行任何同步操作，那他是如何保证线程安全呢？和饿汉模式一样，是靠JVM保证类的静态成员只能被加载一次的特点，这样就从JVM层面保证了只会有一个实例对象。那么问题来了，这种方式和饿汉模式又有什么区别呢？不也是立即加载么？实则不然，加载一个类时，其内部类不会同时被加载。一个类被加载，当且仅当其某个静态成员（静态域、构造器、静态方法等）被调用时发生。 
+可以看到使用这种方式我们没有显式的进行任何同步操作，那他是如何保证线程安全呢？和饿汉模式一样，是靠JVM保证类的静态成员只能被加载一次的特点，这样就从JVM层面保证了只会有一个实例对象。那么问题来了，这种方式和饿汉模式又有什么区别呢？不也是立即加载么？实则不然，加载一个类时，其内部类不会同时被加载。一个类被加载，当且仅当其某个静态成员（静态域、构造器、静态方法等）被调用时发生。
 
 可以说这种方式是实现单例模式的最优解。
 
@@ -317,13 +323,13 @@ class SingletonStaticInner {
 ```java
 //使用静态代码块实现单例模式
 class SingletonStaticBlock {
-	private static SingletonStaticBlock singletonStaticBlock;
-	static {
-		singletonStaticBlock = new SingletonStaticBlock();
-	}
-	public static SingletonStaticBlock getInstance() {
-		return singletonStaticBlock;
-	}
+    private static SingletonStaticBlock singletonStaticBlock;
+    static {
+        singletonStaticBlock = new SingletonStaticBlock();
+    }
+    public static SingletonStaticBlock getInstance() {
+        return singletonStaticBlock;
+    }
 }
 ```
 
@@ -334,51 +340,51 @@ LZ为什么要提序列化和反序列化呢？因为单例模式虽然能保证
 ```java
 public class SingletonStaticInnerSerializeTest {
 
-	public static void main(String[] args) {
-		try {
-			SingletonStaticInnerSerialize serialize = SingletonStaticInnerSerialize.getInstance();
-			System.out.println(serialize.hashCode());
-			//序列化
-			FileOutputStream fo = new FileOutputStream("tem");
-			ObjectOutputStream oo = new ObjectOutputStream(fo);
-			oo.writeObject(serialize);
-			oo.close();
-			fo.close();
-			//反序列化
-			FileInputStream fi = new FileInputStream("tem");
-			ObjectInputStream oi = new ObjectInputStream(fi);
-			SingletonStaticInnerSerialize serialize2 = (SingletonStaticInnerSerialize) oi.readObject();
-			oi.close();
-			fi.close();
-			System.out.println(serialize2.hashCode());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+    public static void main(String[] args) {
+        try {
+            SingletonStaticInnerSerialize serialize = SingletonStaticInnerSerialize.getInstance();
+            System.out.println(serialize.hashCode());
+            //序列化
+            FileOutputStream fo = new FileOutputStream("tem");
+            ObjectOutputStream oo = new ObjectOutputStream(fo);
+            oo.writeObject(serialize);
+            oo.close();
+            fo.close();
+            //反序列化
+            FileInputStream fi = new FileInputStream("tem");
+            ObjectInputStream oi = new ObjectInputStream(fi);
+            SingletonStaticInnerSerialize serialize2 = (SingletonStaticInnerSerialize) oi.readObject();
+            oi.close();
+            fi.close();
+            System.out.println(serialize2.hashCode());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 }
 
 //使用匿名内部类实现单例模式，在遇见序列化和反序列化的场景，得到的不是同一个实例
 //解决这个问题是在序列化的时候使用readResolve方法，即去掉注释的部分
 class SingletonStaticInnerSerialize implements Serializable {
-	
-	/**
-	 * 2018年03月28日
-	 */
-	private static final long serialVersionUID = 1L;
-	
-	private static class InnerClass {
-		private static SingletonStaticInnerSerialize singletonStaticInnerSerialize = new SingletonStaticInnerSerialize();
-	}
-	
-	public static SingletonStaticInnerSerialize getInstance() {
-		return InnerClass.singletonStaticInnerSerialize;
-	}
-	
-//	protected Object readResolve() {
-//		System.out.println("调用了readResolve方法");
-//		return InnerClass.singletonStaticInnerSerialize;
-//	}
+
+    /**
+     * 2018年03月28日
+     */
+    private static final long serialVersionUID = 1L;
+
+    private static class InnerClass {
+        private static SingletonStaticInnerSerialize singletonStaticInnerSerialize = new SingletonStaticInnerSerialize();
+    }
+
+    public static SingletonStaticInnerSerialize getInstance() {
+        return InnerClass.singletonStaticInnerSerialize;
+    }
+
+//    protected Object readResolve() {
+//        System.out.println("调用了readResolve方法");
+//        return InnerClass.singletonStaticInnerSerialize;
+//    }
 }
 ```
 
@@ -389,7 +395,7 @@ class SingletonStaticInnerSerialize implements Serializable {
 1078694789
 ```
 
-结果表明的确是两个不同的对象实例，违背了单例模式，那么如何解决这个问题呢？解决办法就是在反序列化中使用readResolve()方法，将上面的注释代码去掉，再次运行：
+结果表明的确是两个不同的对象实例，违背了单例模式，那么如何解决这个问题呢？解决办法就是在反序列化中使用readResolve\(\)方法，将上面的注释代码去掉，再次运行：
 
 ```
 865113938
@@ -397,9 +403,5 @@ class SingletonStaticInnerSerialize implements Serializable {
 865113938
 ```
 
-问题来了，readResolve()方法到底是何方神圣，其实当JVM从内存中反序列化地"组装"一个新对象时，就会自动调用这个 readResolve方法来返回我们指定好的对象了, 单例规则也就得到了保证。readResolve()的出现允许程序员自行控制通过反序列化得到的对象。
-
-
-
-
+问题来了，readResolve\(\)方法到底是何方神圣，其实当JVM从内存中反序列化地"组装"一个新对象时，就会自动调用这个 readResolve方法来返回我们指定好的对象了, 单例规则也就得到了保证。readResolve\(\)的出现允许程序员自行控制通过反序列化得到的对象。
 
