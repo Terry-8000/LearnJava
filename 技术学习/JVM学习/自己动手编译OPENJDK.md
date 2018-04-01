@@ -1,17 +1,17 @@
 ## 自己编译JDK（macOS）
 
-###	1. 获取JDK源码
+### 1. 获取JDK源码
 
 官网提供了两种下载方式：
 
-1. 通过Mercurial版本控制工具下载(http://hg.openjdk.java.net/)；
-2. 通过官网提供的压缩包下载并解压（目前只提供了jdk6的版本）：http://download.java.net/openjdk/jdk6。
+1. 通过Mercurial版本控制工具下载\([http://hg.openjdk.java.net/\)；](http://hg.openjdk.java.net/%29；)
+2. 通过官网提供的压缩包下载并解压（目前只提供了jdk6的版本）：[http://download.java.net/openjdk/jdk6。](http://download.java.net/openjdk/jdk6。)
 
-由于一些版本问题，踩过坑后，笔者毅然采取了第一种方式，下载了jdk7u版本（ hg clone http://hg.openjdk.java.net/jdk7u/jdk7u-dev/ ），如果没有安装Mercurial，请先安装一下。
+由于一些版本问题，踩过坑后，笔者毅然采取了第一种方式，下载了jdk7u版本（ hg clone [http://hg.openjdk.java.net/jdk7u/jdk7u-dev/](http://hg.openjdk.java.net/jdk7u/jdk7u-dev/) ），如果没有安装Mercurial，请先安装一下。
 
 下载好后，可以参考README-builds.html文档，里面有很多需要注意的细节。官方文档称编译jdk需要很高的专业技术，Sun提供了jdk源码是为了技术专家进行研究之用。虽然没有这么夸张，但还是要注意细节。
 
-###2. 构建编译环境
+### 2. 构建编译环境
 
 1. 需要安装最新版本的XCode和Command Line Tools for XCode。这两个SDK包提供了OpenJDK所需要的编译器以及Makefile中用到的外部命令。
 2. 需要准备一个6u14以上版本的JDK，因为OpenJDK的各个组成部分有的使用C++编写，更多代码则是使用Java自身实现的，因此编译这些代码需要一个可用的JDK，官方称这个SDK为“Bootstrap JDK”。
@@ -68,38 +68,32 @@ unset CLASSPATH
 #先执行make sanity，显示Sanity check passed.成功后再执行make 2>&1 | tee $ALT_OUTPUTDIR/build.log
 #make sanity
 #make 2>&1 | tee $ALT_OUTPUTDIR/build.log
-
 ```
-
-
-
-
 
 ## 4. 可能遇到的错误以及解决办法
 
 **1. make sanity的时候报错：**
 
-   ```shell
+```shell
    jdk/make/common/shared/Defs-utils.gmk:79: *** "\"ant\" not found; please set ANT_HOME or put \"ant\" on your PATH".  Stop.
-   ```
+```
 
 解决方案：这个错误是由于忘记安装ant了，安装ant即可
 
 **2. make sanity的时候报错：**
 
-  ```shell
+```shell
   ERROR: The Compiler version is undefined. 
-   
+
   ERROR: FreeType version  2.3.0  or higher is required. 
    /bin/mkdir -p /Users/wangjun/Downloads/jdk7u-dev/build/macosx-x86_64/btbins
   rm -f /Users/wangjun/Downloads/jdk7u-dev/build/macosx-x86_64/btbins/freetype_versioncheck
   Failed to build freetypecheck.  
 
   Exiting because of the above error(s). 
-   
-  make: *** [post-sanity] Error 1
-  ```
 
+  make: *** [post-sanity] Error 1
+```
 
 解决方案：
 
@@ -167,7 +161,6 @@ jdk7u-dev/hotspot/src/share/vm/adlc/adlparse.cpp:3217:71: error: equality compar
     if( (second == '=') ) {
          ~~~~~~~^~~~~~
 5 errors generated.
-
 ```
 
 解决方案：
@@ -176,7 +169,7 @@ jdk7u-dev/hotspot/src/share/vm/adlc/adlparse.cpp:3217:71: error: equality compar
 
 ```shell
 #解决严格检查导致的错误
-export COMPILER_WARNINGS_FATAL=false  
+export COMPILER_WARNINGS_FATAL=false
 ```
 
 **5. 编译时报错**
@@ -224,8 +217,6 @@ DEPFLAGS = -MMD -MP -MF $(DEP_DIR)/$(@:%=%.d)
 #endif
 ```
 
-
-
 **6. 编译失败，形参默认值问题**
 
 报错
@@ -255,7 +246,6 @@ inline relocInfo prefix_relocInfo(int datalen) {
       protected here
   relocInfo(relocType type, RawBitsToken ignore, int bits)
   ^
-
 ```
 
 解决方法
@@ -297,7 +287,6 @@ jdk7u-dev/hotspot/src/share/vm/runtime/virtualspace.cpp文件
 if (base() != NULL) {
 546行改成
 if (base() != NULL) {
-
 ```
 
 **8.编译失败，找不到对应的类库和方法**
@@ -320,7 +309,7 @@ Unable to load native library: dlopen(/Library/Java/JavaVirtualMachines/jdk1.7.0
 
 下面的libJPEG.dylib拷贝到
 
-/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/jre/lib
+/Library/Java/JavaVirtualMachines/jdk1.7.0\_80.jdk/Contents/Home/jre/lib
 
 下面，覆盖掉之前的libjpeg.dylib。
 
