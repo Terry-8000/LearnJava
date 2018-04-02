@@ -10,6 +10,30 @@ UML类图由三部分组成：类名、属性和方法。
 
 eg：
 
+```
+class Person {
+	
+	private String name = "personName";
+	private int age;
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+}
+```
+
+
+
 ![](/assets/类图1.png)
 
 **类名：**类名就是类的名称，如果是抽象类的话就在右下角加一个（Abstract）标识。
