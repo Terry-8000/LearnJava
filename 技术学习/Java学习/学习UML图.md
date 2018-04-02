@@ -10,7 +10,7 @@ UML类图由三部分组成：类名、属性和方法。
 
 eg：
 
-```
+```java
 class Person {
 	
 	private String name = "personName";
