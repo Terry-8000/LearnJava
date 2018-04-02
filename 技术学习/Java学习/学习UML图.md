@@ -12,42 +12,40 @@ eg：
 
 ```java
 class Person {
-	
-	private String name = "personName";
-	private int age;
-	
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public int getAge() {
-		return age;
-	}
-	public void setAge(int age) {
-		this.age = age;
-	}
-	
+
+    private String name = "personName";
+    private int age;
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public int getAge() {
+        return age;
+    }
+    public void setAge(int age) {
+        this.age = age;
+    }
+
 }
 ```
-
-
 
 ![](/assets/类图1.png)
 
 **类名：**类名就是类的名称，如果是抽象类的话就在右下角加一个（Abstract）标识。
 
-**属性：**就是类的成员变量，可见性表示为public（+）、protected（\#）、private（-）。在UML类图中可以表示属性的可见性、名称、类型和默认值，格式如下（[] 里面的表示可选，可以有可以没有）：
+**属性：**就是类的成员变量，可见性表示为public（+）、protected（\#）、private（-）。在UML类图中可以表示属性的可见性、名称、类型和默认值，格式如下（\[\] 里面的表示可选，可以有可以没有）：
 
 ```
-可见性  名称:类型 = 默认值 
+可见性  名称:类型 = 默认值
 ```
 
 **方法：**可见性同属性，格式如下：
 
 ```
-可见性  名称(参数列表) : 返回类型 
+可见性  名称(参数列表) : 返回类型
 ```
 
 ### 3. UML类图关系
@@ -60,18 +58,20 @@ UML类图之间的主要关系有6种：继承关系，实现关系，依赖关�
 
 ```java
 class Teacher extends Person {
-	
-	private int teacherNum;
-	
-	public String teach() {
-		
-		return "teaching";
-		
-	}
+
+    private int teacherNum;
+
+    public String teach() {
+
+        return "teaching";
+
+    }
 }
 ```
 
 UML图可以表示为：
+
+![](/assets/类图2.png)
 
 
 
