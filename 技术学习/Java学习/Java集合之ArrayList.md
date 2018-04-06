@@ -1,6 +1,6 @@
 # Java集合之ArrayList - 吃透增删查改
 
-**从初始化以及增删查改学习ArrayList。**
+**从源码看初始化以及增删查改，学习ArrayList。**
 
 先来看下ArrayList定义的几个属性：
 
@@ -18,7 +18,7 @@ private int size; // ArrayList的长度
 
 **1. ArrayList()**
 
-无参的构造器代：
+无参的构造器：
 
 ```java
 	/**
