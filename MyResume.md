@@ -6,7 +6,7 @@
 
 ## 个人信息
 
-![](/assets/WechatIMG95.jpg)
+![](/assets/WechatIMG95.jpg){:width="100px" height="150px"}
 
 * 王骏/男/1993
 * 四川大学/信息管理与信息系统/本科
