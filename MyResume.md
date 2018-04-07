@@ -1,3 +1,5 @@
+# 王骏的简历
+
 ## 联系方式
 
 * Phone：18702883147
@@ -9,20 +11,19 @@
 * 王骏/男/1993
 * 四川大学/信息管理与信息系统/本科
 * 工作年限：2年
-* 期望职位：Java相关研发
+* 期望职位：Java研发
 * 期望地点：北京
 
-<img src="/assets/WechatIMG95.jpg" style="width:120px;height:150px"></img>
 
 ## 工作经历
 
-### 华为技术有限公司（2016年7月 ~ 至今  软件研发工程师）
+### 华为技术有限公司（2016年7月 ~ 至今 ）
 
 **1. 华为CRM大型系统研发构建项目（2016.07 ~ 2017.06  软件研发）**
 
 **项目描述：**
 
-基于元数据驱动的CRM开发框架，致力于运营商数字化转型。搭建基线CRM系统，以此为基础，定制各个局点的运营商CRM系统。
+基于元数据驱动的CRM开发框架，致力于运营商数字化转型。搭建基线CRM系统，以此为基础，定制各个局点的运营商CRM系统。使用分布式服务和分布式数据库保证多节点之间的通信和负载均衡。
 
 **个人职责：**
 
@@ -45,7 +46,7 @@ HTML5、CSS、JavaScript、Less 、AngularJS、jQuery、Resuful
 
 **项目描述：**
 
-基于华为CRM系统，进行波兰运营商定制CRM版本的研发与交付，帮助其进行系统升级。
+基于华为CRM系统，通过可拓展能力，进行波兰运营商定制CRM版本的研发与交付，助力其进行系统升级。
 
 **个人职责：**
 
@@ -80,11 +81,11 @@ HTML5、CSS、JavaScript、Less 、AngularJS、jQuery、Resuful
 
 **后端技术：**
 
-Java、Groovy、Freemaker、Jsoup、Tomcat、Docker、Jenkins
+Java、Groovy、Freemaker、Jsoup、Tomcat、Docker、Jenkins、AWS
 
 **前端技术：**
 
-Bootstrap、jQuery、AngularJs、Awesome、JavaScript
+Bootstrap、jQuery、AngularJS、Awesome、JavaScript
 
 ### 学生时期项目
 
@@ -114,7 +115,7 @@ GitHub：[https://github.com/WangJun-SCU/SCUJOO](https://github.com/WangJun-SCU/
 
 ## 技能清单
 
-后端开发：Java / Groovy/ Python / C / C++ / PHP / Jsoup / Linux / Shel
+后端开发：Java / Groovy/ Python / PHP / Jsoup / Linux / Shell
 
 前端开发：HTML5 / CSS / JavaScript / jQuery / AngularJS / Bootstrap
 
@@ -124,7 +125,7 @@ GitHub：[https://github.com/WangJun-SCU/SCUJOO](https://github.com/WangJun-SCU/
 
 服务调用：RPC / Restful
 
-中间框架：Zookeeper / Redis / Nginx / Log4j
+中间框架：Zookeeper / Nginx / Log4j
 
 项目构建：Maven / Tomcat / Git / SVN / Apache / Docker / Jenkins
 
