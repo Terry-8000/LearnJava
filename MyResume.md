@@ -6,6 +6,8 @@
 
 ## 个人信息
 
+![](/assets/WechatIMG95.jpg)
+
 * 王骏/男/1993
 * 四川大学/信息管理与信息系统/本科
 * 工作年限：差3个月2年
@@ -48,32 +50,29 @@
 
 ### 学生时期项目
 
-
-
-
-
 ## 技能清单
 
 后端开发：Java / Groovy/ Python / C / C++ / PHP / Jsoup / Linux / Shell
 
-前端开发：HTML5 / CSS / JavaScript / jQuery / AngularJS / Bootstrap 
+前端开发：HTML5 / CSS / JavaScript / jQuery / AngularJS / Bootstrap
 
-   数据库：Oracle / Mysql / Redis
+数据库：Oracle / Mysql / Redis
 
 数据格式：JSON / XML / WSDL
 
-中间框架：Zookeeper / Redis / Nginx / Log4j 
+中间框架：Zookeeper / Redis / Nginx / Log4j
 
 项目构建：Maven / Tomcat / Git / SVN / Apache
 
 ## 自我评价
 
-- 谦虚，谨慎，爱学习；
-- 理解能力，学习能力强；
-- 具有很好的沟通能力和自驱能力；
-- 喜欢归纳总结，深度学习；
-- 爱读书，爱电影，爱旅行，爱任何新鲜实物。
+* 谦虚，谨慎，爱学习；
+* 理解能力，学习能力强；
+* 具有很好的沟通能力和自驱能力；
+* 喜欢归纳总结，深度学习；
+* 爱读书，爱电影，爱旅行，爱任何新鲜实物。
 
 ## 致谢
 
 感谢您花时间阅读我的简历，期待能有机会和您共事。
+
