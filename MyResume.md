@@ -4,7 +4,7 @@
 * Email：scuwangjun@hotmail.com
 * 微信：18702883147
 
-## 个人信息1
+## 个人信息
 
 <img src="/assets/WechatIMG95.jpg" style="width:100px height:150px"></img>
 
