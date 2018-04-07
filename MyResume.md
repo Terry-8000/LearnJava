@@ -4,15 +4,15 @@
 * Email：scuwangjun@hotmail.com
 * 微信：18702883147
 
-## 个人信息 
-
-<img src="/assets/WechatIMG95.jpg" style="width:120px;height:150px"></img>
+## 个人信息 — 王骏 
 
 * 王骏/男/1993
 * 四川大学/信息管理与信息系统/本科
 * 工作年限：差3个月2年
 * 期望职位：Java相关研发
 * 期望地点：北京
+
+<img src="/assets/WechatIMG95.jpg" style="width:120px;height:150px"></img>
 
 ## 工作经历
 
