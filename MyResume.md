@@ -40,7 +40,7 @@ Java、Groovy、Tomcat、Redis、Spring、Hibernate、Oracle、RPC、Zookeeper
 
 **前端技术：**
 
-HTML5、CSS、JavaScript、Less 、AngularJS、jQuery、Resuful
+HTML5、CSS、JavaScript、Less 、AngularJS、jQuery、Restful
 
 **2.波兰CRM系统定制项目（2017.07 ~ 2017.10  软件研发&项目小组负责人）**
 
@@ -51,7 +51,7 @@ HTML5、CSS、JavaScript、Less 、AngularJS、jQuery、Resuful
 **个人职责：**
 
 - 负责业务需求的端到端流程研发，主要负责客户管理和批量订单模块的研发、输出设计文档和维护系统。
-- 管理，培养4个合作方人员，进行任务拆解分配和研发推进，使其具备华为CRM系统研发能力。
+- 管理、培养4个合作方人员，进行任务拆解分配和研发推进，使其具备华为CRM系统研发能力。
 
 作为项目组骨干，带领4个合作方人员快速高质量的完成需求的分析开发与测试，本模块缺陷率远低于平均水平，受到主管的高度认可。
 
@@ -61,7 +61,7 @@ Java、Groovy、Tomcat、Redis、Spring、Hibernate、Oracle、RPC、Zookeeper
 
 **前端技术：**
 
-HTML5、CSS、JavaScript、Less 、AngularJS、jQuery、Resuful
+HTML5、CSS、JavaScript、Less 、AngularJS、jQuery、Restful
 
 **3. 合作伙伴赋能项目（2017.11 ~ 至今  软件研发&培训人员）**
 
