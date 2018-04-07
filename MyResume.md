@@ -109,7 +109,7 @@ GitHub：[https://github.com/WangJun-SCU/SCUJOO](https://github.com/WangJun-SCU/
 
 前端使用HTML、CSS、JavaScript等开发，后端使用Apcahe作为服务器，PHP作为开发语言搭建寝室报修系统。
 
-**5. 基于iBeacon的书店进场感应系统**
+**5. 基于iBeacon的书店近场感应系统**
 
 毕业设计项目，基于IBeacon和蓝牙低功耗（BLE）进行室内定位。硬件使用estimote设备作为IBeacon，使用阿里云服务器，PHP作为后端开发语言，MySQL作为数据库，搭建成都方所的近场感应系统。
 
