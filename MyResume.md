@@ -14,6 +14,8 @@
 * 期望职位：Java研发
 * 期望地点：北京
 
+<img src="/assets/简历头像1.png" style="width:130px;height:150px"></img>
+
 ## 工作经历
 
 ### 华为技术有限公司（2016年7月 ~ 至今 ）
