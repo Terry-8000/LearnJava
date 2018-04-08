@@ -14,7 +14,7 @@
 * 期望职位：Java研发
 * 期望地点：北京
 
-<img src="/assets/简历头像1.png" style="width:130px;height:150px"></img>
+<img src="/assets/简历头像3.png" style="width:130px;height:150px"></img>
 
 ## 工作经历
 
