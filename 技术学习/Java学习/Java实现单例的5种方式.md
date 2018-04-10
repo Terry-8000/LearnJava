@@ -243,6 +243,7 @@ class SingletonLazy4 {
 //通过设置同步代码块，使用DCL双检查锁机制
 //使用双检查锁机制成功的解决了单例模式的懒汉实现的线程不安全问题和效率问题
 //DCL 也是大多数多线程结合单例模式使用的解决方案
+//
 class SingletonLazy5 {
 
     private static volatile SingletonLazy5 singletonLazy;
