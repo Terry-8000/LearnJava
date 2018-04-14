@@ -16,7 +16,7 @@
   * [Java集合之ArrayList](技术学习/Java学习/Java集合之ArrayList.md)
   * [List⤅&Set的操作和遍历](技术学习/Java学习/List&Map&Set的操作和遍历.md)
   * [JavaP反编译命令](技术学习/Java学习/JavaP反编译命令.md)
-  * [Java实现线程的三种方式](技术学习/Java学习/javashi-xian-xian-cheng-de-san-zhong-fang-shi.md)
+  * [Java实现线程的三种方式](技术学习/Java学习/Java实现线程的三种方式.md)
 * [JVM学习](jvmxue-xi.md)
   * [自己动手编译OPENJDK](技术学习/JVM学习/自己动手编译OPENJDK.md)
 * Java设计模式
