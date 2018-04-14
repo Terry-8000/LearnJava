@@ -10,8 +10,8 @@ Java实现线程的三种方式：
 
 1. 第一种方式继承Thread就不能继承其他类了，后面两种可以；
 2. 使用后两种方式可以多个线程共享一个target；
-3. Callable比Runnable多一个返回值，并且call()方法可以抛出异常；
-4. 访问线程名，第一种直接使用this.getName()，后两种使用Thread.currentThread().getName()。
+3. Callable比Runnable多一个返回值，并且call\(\)方法可以抛出异常；
+4. 访问线程名，第一种直接使用this.getName\(\)，后两种使用Thread.currentThread\(\).getName\(\)。
 
 下面我们通过代码来看一下实现和区别：
 
@@ -20,44 +20,44 @@ Java实现线程的三种方式：
 ```java
 //1. 继承Thread，重写run()方法
 class Thread1 extends Thread {
-	
-	private int n = 5;
-	
-	@Override
-	public void run() {
-		while(n > 0) {
-			System.out.println("name:" + this.getName() + ", n:" + n);
-			n--;
-		}
-	}
+
+    private int n = 5;
+
+    @Override
+    public void run() {
+        while(n > 0) {
+            System.out.println("name:" + this.getName() + ", n:" + n);
+            n--;
+        }
+    }
 }
 //2. 实现Runnable接口，实现run()方法
 class Thread2 implements Runnable {
-	
-	private int n = 5; 
-	
-	@Override
-	public void run() {
-		while(n > 0) {
-			System.out.println("name:" + Thread.currentThread().getName() + ", n:" + n);
-			n--;
-		}
-	}
+
+    private int n = 5; 
+
+    @Override
+    public void run() {
+        while(n > 0) {
+            System.out.println("name:" + Thread.currentThread().getName() + ", n:" + n);
+            n--;
+        }
+    }
 }
 //3. 实现Callable接口，实现call()方法，带有返回值和异常
 class Thread3 implements Callable<String> {
-	
-	private int n = 5;
 
-	@Override
-	public String call() throws Exception {
-		while(n > 0) {
-			System.out.println("name:" + Thread.currentThread().getName() + ", n:" + n);
-			n--;
-		}
-		return String.valueOf(n);
-	}
-	
+    private int n = 5;
+
+    @Override
+    public String call() throws Exception {
+        while(n > 0) {
+            System.out.println("name:" + Thread.currentThread().getName() + ", n:" + n);
+            n--;
+        }
+        return String.valueOf(n);
+    }
+
 }
 ```
 
