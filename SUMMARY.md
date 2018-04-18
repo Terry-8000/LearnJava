@@ -25,6 +25,8 @@
 * Java设计模式
   * [设计模式概述](技术学习/Java设计模式/设计模式概述.md)
 * Mysql
+  * [Mac安装mysql问题](/技术学习/Mysql/Mac安装mysql问题.md)
+  * [mysql索引](/技术学习/Mysql/mysql索引.md)
 * web中间件学习
   * [zookeeper入门](/技术学习/web中间件学习/zookeeper入门.md)
 * [Markdown解决方案实例](技术学习/Markdown解决方案实例.md)
