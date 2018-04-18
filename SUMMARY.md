@@ -24,6 +24,9 @@
   * [自己动手编译OPENJDK](技术学习/JVM学习/自己动手编译OPENJDK.md)
 * Java设计模式
   * [设计模式概述](技术学习/Java设计模式/设计模式概述.md)
+* Mysql
+* web中间件学习
+  * [zookeeper入门](/技术学习/web中间件学习/zookeeper入门.md)
 * [Markdown解决方案实例](技术学习/Markdown解决方案实例.md)
 
 ## 开发
