@@ -5,7 +5,7 @@ Linux系统中我们比较常用的目录是：
 - home ：用户目录
 - usr ：  Unix Software Resource 安装的软件目录
 
-本文介绍一下Linux根目录的结构以及见作用：
+本文介绍一下Linux根目录的结构以及作用：
 
 ### /bin
 
