@@ -14,8 +14,6 @@
 * 期望职位：Java研发
 * 期望地点：北京
 
-<img src="/assets/简历头像3.png" style="width:125px;height:150px"></img>
-
 ## 工作经历
 
 ### 华为技术有限公司（2016年7月 ~ 至今 ）
@@ -116,19 +114,17 @@ GitHub：[https://github.com/WangJun-SCU/SCUJOO](https://github.com/WangJun-SCU/
 
 ## 技能清单
 
-后端开发：Java / Groovy/ Python / PHP / Jsoup / Linux / Shell
+后端开发：Java / Groovy / Jsoup / Linux / Shell
 
 前端开发：HTML5 / CSS / JavaScript / jQuery / AngularJS / Bootstrap
 
-数据库：Oracle / Mysql / Redis
+数据库：Oracle / Mysql
 
-数据格式：JSON / XML / WSDL
+数据格式：JSON / XML
 
-服务调用：RPC / Restful
+中间框架：Zookeeper / Nginx
 
-中间框架：Zookeeper / Nginx / Log4j
-
-项目构建：Maven / Tomcat / Git / SVN / Apache / Docker / Jenkins
+项目构建：Maven / Tomcat / Git / SVN / Jenkins
 
 ## 自我评价
 
@@ -141,4 +137,3 @@ GitHub：[https://github.com/WangJun-SCU/SCUJOO](https://github.com/WangJun-SCU/
 ## 致谢
 
 感谢您花时间阅读我的简历，期待能有机会和您共事。
-
