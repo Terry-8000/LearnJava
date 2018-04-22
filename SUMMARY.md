@@ -12,6 +12,8 @@
 * 算法
   * [冒泡排序](/技术学习/算法/冒泡排序.md)
   * [选择排序](/技术学习/算法/选择排序.md)
+* Java多线程
+  * [Lock](/技术学习/Java多线程/Lock.md)
 * [Java学习](javaxue-xi.md)
   * [Java序列化](技术学习/Java学习/Java序列化.md)
   * [Java实现单例的5种方式](技术学习/Java学习/Java实现单例的5种方式.md)
