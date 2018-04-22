@@ -2,7 +2,7 @@
 
 **场景：**
 
-不下心删除了workspace下面的隐藏文件夹`.metadata`，导致无法再次打开eclipse了，会报错，提醒日志在.metadata下面的log中。于是想重新配置一下workspace，使其自动生成.metadata文件夹。
+不下心删除了workspace下面的隐藏文件夹`.metadata`，导致无法再次打开eclipse了，会报错Could not write metadata for …，提醒日志在.metadata下面的log中。于是想重新配置一下workspace，使其自动生成.metadata文件夹。
 
 **解决方案：**
 
