@@ -47,6 +47,7 @@
   * [小程序bug](开发/小程序/小程序bug.md)
 * 遇到的问题
   * [Mac下eclipse问题](/开发/遇到的问题/Mac下eclipse问题.md)
+* [Mac中Eclipse常用快捷键](/开发/Mac中Eclipse常用快捷键.md)
 
 ## 文档读后感
 
