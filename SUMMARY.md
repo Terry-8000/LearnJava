@@ -40,7 +40,6 @@
   * [Spring入门AOP和IOC](/技术学习/Spring/Spring入门AOP和IOC.md)
 * web中间件学习
   * [zookeeper入门](/技术学习/web中间件学习/zookeeper入门.md)
-* [Markdown解决方案实例](技术学习/Markdown解决方案实例.md)
 
 ## 开发
 
@@ -49,6 +48,7 @@
   * [小程序bug](开发/小程序/小程序bug.md)
 * 遇到的问题
   * [Mac下eclipse问题](/开发/遇到的问题/Mac下eclipse问题.md)
+  * [Markdown解决方案实例](开发/Markdown解决方案实例.md)
 
 ## 文档读后感
 
