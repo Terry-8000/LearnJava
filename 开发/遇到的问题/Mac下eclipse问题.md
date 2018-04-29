@@ -1,4 +1,4 @@
-### 问题：配置eclipse的workspace
+### 问题1：配置eclipse的workspace
 
 **场景：**
 
@@ -14,3 +14,12 @@ Eclipse.app/Contents/Eclipse/configuration/.settings/org.eclipse.ui.ide.prefs
 
 修改`RECENT_WORKSPACES`参数，重新打开eclipse即可。
 
+### 问题2：Eclipse无法反编译maven中依赖的jar包中的Class文件
+
+**场景：**
+
+eclipse可以看到jdk的源码，但是看不到maven下载下来的外部依赖的源码，比如Spring源码。
+
+**解决方案：**
+
+打开help->Eclipse Marketplace，搜索jd，出来的只有一个Enhanced Class Decompiler 3.0.0，点击install重启就好了。
