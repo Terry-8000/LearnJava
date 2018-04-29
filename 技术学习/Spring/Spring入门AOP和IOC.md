@@ -8,7 +8,7 @@ Spring框架的核心有两个：
 
 - Spring容器管理容器中Bean之间的依赖关系，使用一种叫做“依赖注入”的方式来管理bean之间的依赖关系。
 
-  Spring有两个核心接口：`BeanFactory`和`ApplicationContext`,`ApplicationContext`是`BeanFactory`的子接口、它们都可以代表Spring容器，Spring容器是生成Bean实例的工厂，并管理容器中的Bean。建议优先使用ApplicationContext。除非对内存非常关键的应用再考虑使用BeanFactory。当系统创建ApplicationContext的时候，默认会预初始化所有Singleton Bean，这就意味着前期创建ApplicationContext时将有较大的性能开销，但一旦ApplicationContext初始化完成，程序后面获取singleton Bean实例时，就拥有较好的性能。为`<bean/>`元素指定`lazy-init="true"`那么就不会预初始化Singleton bean了。
+Spring有两个核心接口：`BeanFactory`和`ApplicationContext`,`ApplicationContext`是`BeanFactory`的子接口、它们都可以代表Spring容器，Spring容器是生成Bean实例的工厂，并管理容器中的Bean。建议优先使用ApplicationContext。除非对内存非常关键的应用再考虑使用BeanFactory。当系统创建ApplicationContext的时候，默认会预初始化所有Singleton Bean，这就意味着前期创建ApplicationContext时将有较大的性能开销，但一旦ApplicationContext初始化完成，程序后面获取singleton Bean实例时，就拥有较好的性能。为`<bean/>`元素指定`lazy-init="true"`那么就不会预初始化Singleton bean了。
 
 ### IOC
 
