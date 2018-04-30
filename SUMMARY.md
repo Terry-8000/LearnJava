@@ -34,7 +34,7 @@
 * Java设计模式
   * [设计模式概述](技术学习/Java设计模式/设计模式概述.md)
 * Mysql
-  * [Mac安装mysql问题](/技术学习/Mysql/Mac安装mysql问题.md)
+  * [Mac\_mysql问题](/技术学习/Mysql/Mac_mysql问题.md)
   * [mysql索引](/技术学习/Mysql/mysql索引.md)
 * Spring
   * [Spring入门AOP和IOC](/技术学习/Spring/Spring入门AOP和IOC.md)
@@ -62,4 +62,6 @@
 ## 总结
 
 * [2017工作总结](总结/2017工作总结-hide.md)
+
+
 
