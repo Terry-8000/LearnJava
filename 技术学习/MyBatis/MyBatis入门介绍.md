@@ -26,5 +26,11 @@ MyBatis是支持普通SQL查询、存储过程和高级映射的持久层框架�
 
 Spring整合MyBatis很简单，我们可以看到除了MyBaits配置文件的更改并没有太大变化。其实Spring整合MyBatis的优势主要在于使用上，我们来看看Spring中使用MyBatis的用法：
 
+```java
+//TODO 补充Java代码
+```
+
+我们可以看到，在Spring中使用MyBatis非常方便，用户甚至无法察觉自己正在使用MyBatis，而这一切相对于独立使用MyBatis时必须要做的冗余操作来说无非是打打简化了我们的工作量。
+
 
 
