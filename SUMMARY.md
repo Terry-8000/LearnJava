@@ -31,8 +31,6 @@
 * Linux学习
   * [Linux常用命令](/技术学习/Linux学习/Linux常用命令.md)
   * [Linux文件系统结构](/技术学习/Linux学习/Linux文件系统结构.md)
-* MyBatis
-  * [MyBatis入门介绍](/技术学习/MyBatis/MyBatis入门介绍.md)
 * Java设计模式
   * [设计模式概述](技术学习/Java设计模式/设计模式概述.md)
 * Mysql
