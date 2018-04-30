@@ -20,5 +20,3 @@ mysql> FLUSH PRIVILEGES;
 
 
 
-
-
