@@ -163,7 +163,7 @@ package com.wangjun.mybatis.test.mybatis;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-public class TestMapper {
+public class TestMapper { 
 	static SqlSessionFactory sqlSessionFactory = null;
 	static {
 		System.out.println(111);
