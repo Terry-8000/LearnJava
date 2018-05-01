@@ -1,4 +1,4 @@
-# MyBatis入门介绍
+# MyBatis入门使用
 
 ### MyBatis简介
 
@@ -256,15 +256,87 @@ name:wangjun|age:25
 上述步骤的1,2，3步不变。只需要配置Spring文件：
 
 1. 将MyBatis配置文件的environments配置移动到了Spring的配置文件中。针对MyBstis，注册org.mybatis.Spring.SqlsessionFactoryBean类型的bean，以及用于映射接口的org.mybatis.Spring.mapper.MapperFactoryBean。
+
+   ```xml
+   <?xml version="1.0" encoding="UTF-8"?>
+   <beans xmlns="http://www.springframework.org/schema/beans"
+   	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+   	<!-- 需要maven依赖commons-dbcp包 -->
+   	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+   		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
+   		<property name="url" value="jdbc:mysql://localhost/test?useSSL=false"></property>
+   		<property name="username" value="root"></property>
+   		<property name="password" value="password"></property>
+   		<property name="maxIdle" value="30"></property>
+   		<property name="defaultAutoCommit" value="true"></property>
+   	</bean>
+   	
+   	<!-- 需要maven依赖mybatis-spring和spring-jdbc包 -->
+   	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+   		<property name="configLocation" value="mybatis/configuration.xml"></property>
+   		<property name="dataSource" ref="dataSource"></property>
+   	</bean>
+   	
+   	<bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+   		<property name="mapperInterface" value="com.wangjun.mybatis.test.mybatis.UserMapper"></property>
+   		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+   	</bean>
+   </beans>
+
+   ```
+
+   ​
+
 2. MyBatis的配置文件简化。
+
+   ```xml
+   <?xml version="1.0" encoding="UTF-8" ?>
+   <!DOCTYPE configuration
+     PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+     "http://mybatis.org/dtd/mybatis-3-config.dtd">
+   <configuration>
+   	<typeAliases>
+   		<typeAlias alias="User" type="com.wangjun.mybatis.test.mybatis.User"/>
+   	</typeAliases>
+     <mappers>
+       <mapper resource="mybatis/UserMapper.xml"/>
+     </mappers>
+   </configuration>
+   ```
+
+   ​
 
 **测试**
 
 Spring整合MyBatis很简单，我们可以看到除了MyBaits配置文件的更改并没有太大变化。其实Spring整合MyBatis的优势主要在于使用上，我们来看看Spring中使用MyBatis的用法：
 
 ```java
-//TODO 补充Java代码
+package com.wangjun.mybatis.test.mybatis;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class SpringMyBatisTest {
+
+	public static void main(String[] args) {
+		ApplicationContext context = new ClassPathXmlApplicationContext("mybatis/springMyBatis.xml");
+		UserMapper um = context.getBean("userMapper", UserMapper.class);
+		//查询数据
+		User user = um.getUser(1);
+		System.out.println(user.getName());
+		System.out.println(user.getAge());
+		
+		//插入数据
+		User addUser = new User("lujiashaoye", 24);
+		um.insertUser(addUser);
+	}
+
+}
+
 ```
 
 我们可以看到，在Spring中使用MyBatis非常方便，用户甚至无法察觉自己正在使用MyBatis，而这一切相对于独立使用MyBatis时必须要做的冗余操作来说无非是打打简化了我们的工作量。
 
+> 《Spring源码深度解析》笔记
