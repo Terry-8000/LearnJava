@@ -6,7 +6,7 @@ servlet通常被称为服务端小程序，是运行在服务器端的程序，�
 
 Servlet是个特殊的java类，这个类必须继承HtppServlet，每个Servlet可以响应客户端的请求。Servlet提供不同的方法用于影响客户端请求：
 
-- doGet：用于响应客户端的get请求；
+- doGet：用于响应客户端的get请求； 
 - doPost：用于响应客户端的post请求；
 - doPut：用于响应客户端的put请求；
 - doDelete：用于响应客户端的delete请求；
