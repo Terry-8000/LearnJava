@@ -43,7 +43,7 @@
   * [Spring入门AOP和IOC](/技术学习/Spring/Spring入门AOP和IOC.md)
   * [SpringMVC入门笔记](/技术学习/Spring/SpringMVC入门笔记.md)
 * web中间件学习
-  * [Tomcat学习][/技术学习/web中间件学习/Tomcat学习.md]
+  * [Tomcat学习](/技术学习/web中间件学习/Tomcat学习.md)
   * [zookeeper入门](/技术学习/web中间件学习/zookeeper入门.md)
 
 ## 开发
