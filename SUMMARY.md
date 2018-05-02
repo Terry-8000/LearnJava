@@ -37,6 +37,7 @@
   * [MyBatis入门介绍](技术学习/MyBatis/MyBatis入门介绍.md)
 * Java设计模式
   * [设计模式概述](技术学习/Java设计模式/设计模式概述.md)
+  * [代理模式](技术学习/Java设计模式/代理模式.md)
 * Mysql
   * [Mac\_mysql问题](/技术学习/Mysql/Mac_mysql问题.md)
   * [mysql索引](/技术学习/Mysql/mysql索引.md)
