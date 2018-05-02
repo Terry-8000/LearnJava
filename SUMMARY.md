@@ -35,7 +35,7 @@
   * [Linux文件系统结构](/技术学习/Linux学习/Linux文件系统结构.md)
 * MyBatis
   * [MyBatis入门介绍](技术学习/MyBatis/MyBatis入门介绍.md)
-* Java设计模式
+* [Java设计模式](javashe-ji-mo-shi.md)
   * [设计模式概述](技术学习/Java设计模式/设计模式概述.md)
   * [代理模式](技术学习/Java设计模式/代理模式.md)
 * Mysql
@@ -70,6 +70,4 @@
 ## 总结
 
 * [2017工作总结](总结/2017工作总结-hide.md)
-
-
 
