@@ -19,6 +19,7 @@
   * [Java序列化](技术学习/Java学习/Java序列化.md)
   * [Java实现单例的5种方式](技术学习/Java学习/Java实现单例的5种方式.md)
   * [学习UML图](技术学习/Java学习/学习UML图.md)
+  * [IO和NIO](/技术学习/Java学习/IO和NIO.md)
   * [Java集合之ArrayList](技术学习/Java学习/Java集合之ArrayList.md)
   * [List⤅&Set的操作和遍历](技术学习/Java学习/List&Map&Set的操作和遍历.md)
   * [JavaP反编译命令](技术学习/Java学习/JavaP反编译命令.md)
@@ -38,6 +39,7 @@
 * [Java设计模式](javashe-ji-mo-shi.md)
   * [设计模式概述](技术学习/Java设计模式/设计模式概述.md)
   * [代理模式](技术学习/Java设计模式/代理模式.md)
+  * [装饰者模式](/技术学习/Java设计模式/装饰者模式.md)
 * Mysql
   * [Mac\_mysql问题](/技术学习/Mysql/Mac_mysql问题.md)
   * [mysql索引](/技术学习/Mysql/mysql索引.md)
