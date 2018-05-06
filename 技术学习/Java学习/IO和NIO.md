@@ -576,3 +576,12 @@ Java的NIO提供了与标准IO不同的工作方式：
 > https://blog.csdn.net/anxpp/article/details/51512200 
 >
 > http://bbym010.iteye.com/blog/2100868
+
+## Netty简介
+
+Netty是一个java开源框架。Netty提供异步的、事件驱动的网络应用程序框架和工具，用以快速开发高性能、高可靠性的网络服务器和客户端程序。
+
+Netty是一个NIO客户端、服务端框架。允许快速简单的开发网络应用程序。例如：服务端和客户端之间的协议。它最牛逼的地方在于简化了网络编程规范。例如:TCP和UDP的Socket服务。
+
+
+
