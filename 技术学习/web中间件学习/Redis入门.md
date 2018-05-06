@@ -78,4 +78,4 @@ OK
 127.0.0.1:6379> 
 ```
 
-  
+> 参考：http://www.runoob.com/redis/redis-tutorial.html
