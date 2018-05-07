@@ -78,4 +78,48 @@ OK
 127.0.0.1:6379> 
 ```
 
-> 参考：http://www.runoob.com/redis/redis-tutorial.html
+### Redis基础特性
+
+- 多数据库：
+
+  一个Redis实例最多提供16个数据库（类似mysql的多个数据库），下标0-15，默认连接0数据库。
+
+  通过select n 选择数据库。
+
+- 事物:
+
+  一次提交多条记录，multi：开始事务；exec：提交事务；discard：回滚事务。
+
+  ```Shell
+  127.0.0.1:6379> get age
+  "28"
+  127.0.0.1:6379> multi
+  OK
+  127.0.0.1:6379> incr age
+  QUEUED
+  127.0.0.1:6379> incr age
+  QUEUED
+  127.0.0.1:6379> exec
+  1) (integer) 29
+  2) (integer) 30
+  127.0.0.1:6379> get age
+  "30"
+  127.0.0.1:6379> multi 
+  OK
+  127.0.0.1:6379> incr age
+  QUEUED
+  127.0.0.1:6379> incr age
+  QUEUED
+  127.0.0.1:6379> discard
+  OK
+  127.0.0.1:6379> get age
+  "30"
+  ```
+
+
+
+> 参考：
+>
+> http://www.runoob.com/redis/redis-tutorial.html
+>
+> https://www.imooc.com/video/14932/0
