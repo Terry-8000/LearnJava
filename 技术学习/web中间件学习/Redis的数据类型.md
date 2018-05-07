@@ -1,6 +1,6 @@
 # Redis的数据类型
 
-Redis支持的数据类型有：
+Redis支持的数据类型有5种：
 
 - 字符串String
 - 字符串列表list
