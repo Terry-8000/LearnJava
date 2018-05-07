@@ -43,7 +43,7 @@
   * [装饰者模式](/技术学习/Java设计模式/装饰者模式.md)
 * Mysql
   * [Mac\_mysql问题](/技术学习/Mysql/Mac_mysql问题.md)
-  * [mysql事务](/技术学习/Mysql/mysql索引.md)
+  * [mysql事务](/技术学习/Mysql/mysql事务.md)
   * [mysql索引](/技术学习/Mysql/mysql索引.md)
 * Spring
   * [Spring入门AOP和IOC](/技术学习/Spring/Spring入门AOP和IOC.md)
