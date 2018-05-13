@@ -48,6 +48,7 @@
   * [Mac\_mysql问题](/技术学习/Mysql/Mac_mysql问题.md)
   * [mysql事务](/技术学习/Mysql/mysql事务.md)
   * [mysql索引](/技术学习/Mysql/mysql索引.md)
+  * [mysql约束](/技术学习/Mysql/mysql约束.md)
 * Spring
   * [Spring入门AOP和IOC](/技术学习/Spring/Spring入门AOP和IOC.md)
   * [SpringMVC入门笔记](/技术学习/Spring/SpringMVC入门笔记.md)
