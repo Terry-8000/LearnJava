@@ -47,6 +47,7 @@
 * Mysql
   * [Mac\_mysql问题](/技术学习/Mysql/Mac_mysql问题.md)
   * [mysql事务](/技术学习/Mysql/mysql事务.md)
+  * [mysql视图](/技术学习/Mysql/mysql视图.md)
   * [mysql索引](/技术学习/Mysql/mysql索引.md)
   * [mysql约束](/技术学习/Mysql/mysql约束.md)
 * Spring
