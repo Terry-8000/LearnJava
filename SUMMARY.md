@@ -45,6 +45,7 @@
   * [代理模式](技术学习/Java设计模式/代理模式.md)
   * [装饰者模式](/技术学习/Java设计模式/装饰者模式.md)
 * Mysql
+  * [InnoDB介绍](/技术学习/Mysql/InnoDB介绍.md)
   * [Mac\_mysql问题](/技术学习/Mysql/Mac_mysql问题.md)
   * [mysql事务](/技术学习/Mysql/mysql事务.md)
   * [mysql视图](/技术学习/Mysql/mysql视图.md)
