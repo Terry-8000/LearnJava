@@ -70,6 +70,8 @@ B+树索引并不能找到一个给定键值得具体行，B+树索引能找到�
 
 > 参考：
 >
+> 《MySQL技术内幕》
+>
 > [http://www.runoob.com/mysql/mysql-index.html](http://www.runoob.com/mysql/mysql-index.html)
 >
 > [https://blog.csdn.net/superit401/article/details/51291603](https://blog.csdn.net/superit401/article/details/51291603)
