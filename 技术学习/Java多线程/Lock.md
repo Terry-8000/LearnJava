@@ -36,5 +36,10 @@ public ReentrantLock(boolean fair) {
 >
 > https://blog.csdn.net/z69183787/article/details/50971317
 
-### 2. 可重入锁
+### 2. 可重入锁和不可重入锁
 
+
+
+> 参考：
+>
+> https://www.cnblogs.com/dj3839/p/6580765.html
