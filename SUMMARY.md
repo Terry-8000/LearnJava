@@ -19,6 +19,8 @@
   * [选择排序](/技术学习/算法/选择排序.md)
 * Java多线程
   * [Lock](/技术学习/Java多线程/Lock.md)
+* Java设计模式
+  * [代理模式](/技术学习/Java设计模式/代理模式.md)
 * [Java学习](javaxue-xi.md)
   * [Java序列化](技术学习/Java学习/Java序列化.md)
   * [Java异常](技术学习/Java学习/Java异常.md)
