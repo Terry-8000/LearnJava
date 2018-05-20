@@ -21,6 +21,9 @@
   * [Lock](/技术学习/Java多线程/Lock.md)
 * Java设计模式
   * [代理模式](/技术学习/Java设计模式/代理模式.md)
+  * [设计模式概述](/技术学习/Java设计模式/设计模式概述.md)
+  * [职责链模式](/技术学习/Java设计模式/职责链模式.md)
+  * [装饰者模式](/技术学习/Java设计模式/装饰者模式.md)
 * [Java学习](javaxue-xi.md)
   * [Java序列化](技术学习/Java学习/Java序列化.md)
   * [Java异常](技术学习/Java学习/Java异常.md)
