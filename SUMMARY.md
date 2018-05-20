@@ -68,6 +68,7 @@
   * [RPC入门](/技术学习/web中间件学习/RPC入门.md)
   * [Tomcat学习](/技术学习/web中间件学习/Tomcat学习.md)
   * [zookeeper入门](/技术学习/web中间件学习/zookeeper入门.md)
+  * [Zookerper选举原理](/技术学习/web中间件学习/Zookerper选举原理.md)
 
 ## 开发
 
