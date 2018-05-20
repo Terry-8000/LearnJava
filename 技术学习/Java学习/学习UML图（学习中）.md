@@ -71,7 +71,7 @@ class Teacher extends Person {
 
 UML图可以表示为：
 
-![](/assets/类图2.png)
+![](../../assets/类图2.png)
 
 继续学习：
 
