@@ -166,21 +166,65 @@ Lock2 lock = new Lock2();
 排他锁【X锁】
 又称写锁。若事务T对数据对象A加上X锁，事务T可以读A也可以修改A，其他事务不能再对A加任何锁，直到T释放A上的锁。这保证了其他事务在T释放A上的锁之前不能再读取和修改A。
 
-对于ReentrantLock和Synchronized而言，是独享锁。对于ReadWriteLock而言，读锁是共享锁，写锁是独享锁。读锁的共享锁可以保证并发读是非常高效的，读写、写读、写写的过程是互斥的。独享锁与共享锁也是通过AQS来实现的，通过实现不同的方法，来实现独享或者共享。
+对于ReentrantLock和Synchronized而言，是独享锁，读读、读写、写写的过程都是互斥的。对于ReadWriteLock而言，读锁是共享锁，写锁是独享锁，读锁的共享锁可以保证并发读是非常高效的，在读写锁中，读读不互斥、读写、写写的过程是互斥的。独享锁与共享锁也是通过AQS来实现的，通过实现不同的方法，来实现独享或者共享。
 
-**互斥锁和读写锁**
+**读写锁ReentrantReadWriteLock的应用场景：**
 
-独享锁/共享锁就是一种广义的说法，互斥锁/读写锁就是具体的实现。
+读写锁：分为读锁和写锁，多个读锁不互斥，读锁与写锁互斥，这是由jvm自己控制的，我们只要上好相应的锁即可。如果你的代码只读数据，可以很多人同时读，但不能同时写，那就上读锁；如果你的代码修改数据，只能有一个人在写，且不能同时读取，那就上写锁。总之，读的时候上读锁，写的时候上写锁！
 
-互斥锁在Java中的具体实现就是ReentrantLock；
+ReentrantReadWriteLock会使用两把锁来解决问题，一个读锁，一个写锁。
 
-读写锁在Java中的具体实现就是ReadWriteLock。
+**线程进入读锁的前提条件：**
+
+1. 没有其他线程的写锁
+2. 没有写请求，或者有写请求但调用线程和持有锁的线程是同一个线程
+
+**进入写锁的前提条件：**
+
+ 　1. 没有其他线程的读锁
+ 　2. 没有其他线程的写锁
 
 
+ReentrantReadWriteLock的javaodoc文档中提供给我们的一个很好的Cache实例代码案例：
 
-load…..
+```java
+class CachedData {
+  Object data;  //缓存的数据
+  volatile boolean cacheValid;  //缓存是否有效
+  final ReentrantReadWriteLock rwl = new ReentrantReadWriteLock();
+
+  public void processCachedData() {
+    rwl.readLock().lock();
+    if (!cacheValid) {
+      // 再加写锁之前必须先释放读锁，因为进入写锁的条件是没有其他线程的读锁和写锁
+      rwl.readLock().unlock();
+      rwl.writeLock().lock();
+      try {
+        // 类似单例模式的DCL双重检查，防止其他线程先拿到写锁对数据进行了缓存，因此要再判断一次
+        if (!cacheValid) {
+          data = ...
+          cacheValid = true;
+        }
+        // 在释放写锁之前通过获取读锁降级写锁，防止释放写锁后立即被其他线程加上写锁，导致读取脏数据
+        rwl.readLock().lock();
+      } finally {
+        rwl.writeLock().unlock(); // 释放写锁而此时已经持有读锁
+      }
+    }
+
+    try {
+      use(data);
+    } finally {
+      rwl.readLock().unlock();
+    }
+  }
+}
+```
 
 
+> 参考：
+>
+> https://www.cnblogs.com/liang1101/p/6475555.html?utm_source=itdadao&utm_medium=referral
 
 ### 4. 乐观锁和悲观锁
 
