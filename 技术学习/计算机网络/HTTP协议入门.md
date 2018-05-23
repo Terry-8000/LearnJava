@@ -60,18 +60,22 @@ HTTP协议是Hypertext Transfer Protocol超文本传输协议的缩写。HTTP协
 
 下面是一个POST方法的请求报文：
 
-> POST 　/index.php　HTTP/1.1 　　 请求行
-> Host: localhost
-> User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:10.0.2) Gecko/20100101 Firefox/10.0.2　　请求头
-> Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-> Accept-Language: zh-cn,zh;q=0.5
-> Accept-Encoding: gzip, deflate
-> Connection: keep-alive
-> Referer: <http://localhost/>
-> Content-Length：25
-> Content-Type：application/x-www-form-urlencoded
-> 　　空行
-> username=aa&password=1234　　请求数据
+```
+POST 　/index.php　HTTP/1.1 　　 请求行
+Host: localhost
+User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:10.0.2) Gecko/20100101 Firefox/10.0.2　　请求头
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,/;q=0.8
+Accept-Language: zh-cn,zh;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://localhost/
+Content-Length：25
+Content-Type：application/x-www-form-urlencoded
+　　空行
+username=aa&password=1234　　请求数据
+```
+
+
 
 ### HTTP响应的报文格式
 
@@ -104,28 +108,29 @@ HTTP响应报文主要由状态行、响应头部、空行以及响应数据组�
 
 下面是一个响应报文的实例：
 
-> HTTP/1.1 200 OK　　状态行
-> Date: Sun, 17 Mar 2013 08:12:54 GMT　　响应头部
-> Server: Apache/2.2.8 (Win32) PHP/5.2.5
-> X-Powered-By: PHP/5.2.5
-> Set-Cookie: PHPSESSID=c0huq7pdkmm5gg6osoe3mgjmm3; path=/
-> Expires: Thu, 19 Nov 1981 08:52:00 GMT
-> Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
-> Pragma: no-cache
-> Content-Length: 4393
-> Keep-Alive: timeout=5, max=100
-> Connection: Keep-Alive
-> Content-Type: text/html; charset=utf-8
-> 　　空行
->
-> <html>　　响应数据
-> <head>
-> <title>HTTP响应示例<title>
-> </head>
-> <body>
-> Hello HTTP!
-> </body>
-> </html>
+```
+HTTP/1.1 200 OK　　状态行
+Date: Sun, 17 Mar 2013 08:12:54 GMT　　响应头部
+Server: Apache/2.2.8 (Win32) PHP/5.2.5
+X-Powered-By: PHP/5.2.5
+Set-Cookie: PHPSESSID=c0huq7pdkmm5gg6osoe3mgjmm3; path=/
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Content-Length: 4393
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: text/html; charset=utf-8
+　　空行
+<html>　　响应数据
+<head>
+<title>HTTP响应示例<title>
+</head>
+<body>
+Hello HTTP!
+</body>
+</html>
+```
 
 ### GET和POST的区别和联系
 
