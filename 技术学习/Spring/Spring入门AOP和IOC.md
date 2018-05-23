@@ -1,6 +1,6 @@
 # Spring入门IOC和AOP学习笔记
 
-### 概述
+### 1. 概述
 
 Spring框架的核心有两个：
 
@@ -10,7 +10,7 @@ Spring框架的核心有两个：
 
 Spring有两个核心接口：`BeanFactory`和`ApplicationContext`,`ApplicationContext`是`BeanFactory`的子接口、它们都可以代表Spring容器，Spring容器是生成Bean实例的工厂，并管理容器中的Bean。建议优先使用ApplicationContext。除非对内存非常关键的应用再考虑使用BeanFactory。当系统创建ApplicationContext的时候，默认会预初始化所有Singleton Bean，这就意味着前期创建ApplicationContext时将有较大的性能开销，但一旦ApplicationContext初始化完成，程序后面获取singleton Bean实例时，就拥有较好的性能。为`<bean/>`元素指定`lazy-init="true"`那么就不会预初始化Singleton bean了。
 
-### IOC
+### 2. IOC
 
 Inversion Of Control，控制反转，也可以叫依赖注入。A对象需要调用B对象的方法的情景，这种情形称为依赖，即A对象依赖B对象。使用依赖注入不仅可以为Bean对象注入普通的属性值，还可以注入其他Bean引用。通过这种依赖注入，Java EE应用中的各种组件不需要以硬编码方式耦合在一起，甚至无需使用工厂模式。当某个Java实例需要其他Java实例时，系统自动提供所需要的实例，无需程序显式获取。
 
@@ -44,7 +44,7 @@ Inversion Of Control，控制反转，也可以叫依赖注入。A对象需要�
 
 
 
-### AOP
+### 3. AOP
 
 Aspect Oriented Programming，面向切面编程，用于在模块化方面的横切关注点。AOP和OOP（Object Oriented Programming）互为补充，可以这么理解：面向对象编程是从静态角度纵向考虑程序结构，面向切面编程则是从动态角度横向考虑运行过程。比如一个日记记录的功能，代码往往水平的散落在所有对象中，与被散布的对象的核心功能没什么关系，这种散布在各个对象中的无关代码被称为“横切代码”，在OOP的设计中，它导致了大量代码的重复，从而不利于各个模块的复用。
 
@@ -112,7 +112,7 @@ Spring AOP中的动态代理主要有两种方式，**JDK动态代理**和**CGLI
 如果目标类没有实现接口，那么Spring AOP会选择使用CGLIB来动态代理目标类。CGLIB（Code Generation Library），是一个代码生成的类库，可以在运行时动态的生成某个类的子类，注意，CGLIB是通过继承的方式做的动态代理，因此如果某个类被标记为`final`，那么它是无法使用CGLIB做动态代理的。
 
 
-### 学习路径
+### 4. 学习路径
 
 1. 构建AOP和IOC的demo；
 2. 安装spring工具套件STS；
