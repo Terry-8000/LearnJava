@@ -75,7 +75,11 @@ Content-Type：application/x-www-form-urlencoded
 username=aa&password=1234　　请求数据
 ```
 
+*注意：*可以使用谷歌自带的HTTP报文拦截器查看HTTP详细报文
 
+```
+chrome://net-internals/#events
+```
 
 ### HTTP响应的报文格式
 
