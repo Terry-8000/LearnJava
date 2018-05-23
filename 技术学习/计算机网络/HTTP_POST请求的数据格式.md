@@ -2,7 +2,7 @@
 
 在HTTP的请求头中，可以使用Content-type来指定不同格式的请求信息。
 
-### Content-type的类型
+### 1. Content-type的类型
 
 **常见的媒体格式类型：**
 
@@ -109,7 +109,7 @@
 
    这种格式的数据会有一个边界线boundary（这里就是`------WebKitFormBoundaryBRi81vNtMyBL97Rb`）用于分割不同的字段，为了避免与正文内容重复，boundary很长很复杂。消息主体以boundary开始，紧接着就是内容描述信息，然后是回车，最后是字段具体的内容（文本或二进制）。如果传输的是文件，还要包含文件名和文件类型信息。消息主体以boundary结束。
 
-### Request Headers部分各个字段的功能
+### 2. Request Headers部分各个字段的功能
 
 通过上面的例子，我们可以看到在Request Headers里面以后很多字段，比如Content-type，Host这些，那么这些字段又有什么意思呢，下面通过表格来介绍一下：
 
@@ -156,7 +156,7 @@ User-Agent里面包含了浏览器客户端的信息，比如：Mozilla/5.0 (Win
 
 这四家机构分别是Microsoft、Mozilla、Apple和Opera SAS，提供的内核则分别叫做Trident、Gecko、WebKit和Presto，推出的主打浏览器则分别叫做Internet Explorer、Firefox、Safari和Opera。我们最常使用的Chrome浏览器就是用的苹果公司的Webkit。国内的一些浏览器也是基于webkit内核的，其所谓的双核中的极速模式就是webkit内核，兼容模式就是ie的trident内核。
 
-### Response Headers部分各个字段的功能
+### 3. Response Headers部分各个字段的功能
 
 Request Headers是请求头，Response Headers是响应头，同样，它也包含了一些字段信息：
 
@@ -190,16 +190,6 @@ Request Headers是请求头，Response Headers是响应头，同样，它也包�
 | Via                | 告知代理客户端响应是通过哪里发送的                        | Via: 1.0 fred, 1.1 nowhere.com (Apache/1.1) |
 | Warning            | 警告实体可能存在的问题                              | Warning: 199 Miscellaneous warning       |
 | WWW-Authenticate   | 表明客户端请求实体应该使用的授权方案                       | WWW-Authenticate: Basic                  |
-
-
-
-
-
-
-
-
-
-
 
 
 

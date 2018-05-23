@@ -1,16 +1,16 @@
 # SpringBoot入门
 
-### SpringBoot简介
+### 1. SpringBoot简介
 
 spring boot是一种全新的Java web框架，目的是简化Spring应用的初始搭建和开发过程，让开发者写更少的配置，程序更快的启动和运行，致力于成为快速开发应用领域的领导者。
 
 从它的名字也可以看出，更像是一个引导程序，就跟我们傻瓜式的安装电脑软件一样，next，next...很快我们就可以搭建起一个Spring应用。
 
-### Spring产生背景
+### 2. Spring产生背景
 
 在使用Spring和Spring MVC框架的时候，我们需要手动配置很多东西，我们更希望的是“约定大于配置”，就是说系统、类库、框架应该假定合理的默认值，而非要求提供不必要的配置，使用Spring和Spring MVC进行很多配置，不仅增加了工作量，而且在跨平台部署的时候容易出现问题。由于这些问题的存在，Spring Boot应运而生，使用Spring Boot我们可以很快的创建一个基于Spring的项目，让这个Spring项目跑起来只需要很少的配置就可以了。
 
-### Spring Boot的优缺点
+### 3. Spring Boot的优缺点
 
 Spring Boot可以独立运行Spring项目，它可以以jar包的形式来运行，`java -jar xxx.jar`就可以运行，很方便。并且可以内嵌Tomcat，这样我们无需以war包的形式部署项目。Spring Boot通过starter能够帮助我们简化maven配置。总的来说，Spring Boot大致有以下优缺点。
 
@@ -32,7 +32,7 @@ Spring Boot可以独立运行Spring项目，它可以以jar包的形式来运行
 
 Spring Boot只是微服务框架的起点，配合Spring Cloud可以快速搭建微服务。
 
-###  搭建一个简单的Spring Boot工程
+###  4. 搭建一个简单的Spring Boot工程
 
 1. 新建一个maven工程；
 
@@ -132,7 +132,7 @@ server:
 
 接下来重新启动，访问端口就变成了8030。
 
-### 使用jpa操作数据库
+### 5. 使用jpa操作数据库
 
 在pom中添加依赖：
 
@@ -303,11 +303,7 @@ public User addUser(@RequestParam("name") String name, @RequestParam("age") Inte
 
 重新启动服务，然后可以在postman中，重新模拟发送post请求。
 
-
-
-
-
-### 遇到的问题
+### 5. 遇到的问题
 
 **1. spring boot发布的post服务报400错误**
 
