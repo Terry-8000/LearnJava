@@ -2,35 +2,32 @@
 
 在HTTP的请求头中，可以使用Content-type来指定不同格式的请求信息。
 
-### 1. Content-type的类型
+## 1. Content-type的类型
 
 **常见的媒体格式类型：**
 
--     text/html ： HTML格式
--     text/plain ：纯文本格式      
--     text/xml ：  XML格式
--     image/gif ：gif图片格式    
--     image/jpeg ：jpg图片格式 
--     image/png：png图片格式
+- text/html ： HTML格式
+- text/plain ：纯文本格式      
+- text/xml ：  XML格式
+- image/gif ：gif图片格式    
+- image/jpeg ：jpg图片格式 
+- image/png：png图片格式
 
+**以applicaton开头的媒体类型：**
 
-**以applicaton开头的没提类型：**
-
--   **application/json**    ： JSON数据格式
--   application/xhtml+xml ：XHTML格式
--   application/xml     ： XML数据格式
--   application/atom+xml  ：Atom XML聚合格式    
--   application/pdf       ：pdf格式  
--   application/javascript  ：js格式
--   application/msword  ： Word文档格式
--   application/octet-stream ： 二进制流数据（如常见的文件下载）
--   **application/x-www-form-urlencoded** ：form表单默认的数据格式类型，form表单数据被编码为key/value格式发送到服务器。
-
+- **application/json**    ： JSON数据格式
+- application/xhtml+xml ：XHTML格式
+- application/xml     ： XML数据格式
+- application/atom+xml  ：Atom XML聚合格式    
+- application/pdf       ：pdf格式  
+- application/javascript  ：js格式
+- application/msword  ： Word文档格式
+- application/octet-stream ： 二进制流数据（如常见的文件下载）
+- **application/x-www-form-urlencoded** ：form表单默认的数据格式类型，form表单数据被编码为key/value格式发送到服务器。
 
 **另外一种常见的媒体格式是上传文件之时使用的：**
 
 - **multipart/form-data** ： 需要在表单中进行文件上传时，就需要使用该格式。
-
 
 除了原生的content-type，开发人员也可以完全自定义数据提交格式！
 
@@ -78,7 +75,7 @@
    {"name":"121","age":121}
    ```
 
-3. **multipart/form-data**，对用于在表单中上传文件时，也可以上传普通数据，只需要让from的ectyle等于multipart/form-data就可以了。比如下面的http请求格式：
+3. **multipart/form-data**，对用于在表单中上传文件时，也可以上传普通数据，只需要让form的enctype等于multipart/form-data就可以了。比如下面的http请求格式：
 
    ```
    # Request Header
@@ -109,7 +106,7 @@
 
    这种格式的数据会有一个边界线boundary（这里就是`------WebKitFormBoundaryBRi81vNtMyBL97Rb`）用于分割不同的字段，为了避免与正文内容重复，boundary很长很复杂。消息主体以boundary开始，紧接着就是内容描述信息，然后是回车，最后是字段具体的内容（文本或二进制）。如果传输的是文件，还要包含文件名和文件类型信息。消息主体以boundary结束。
 
-### 2. Request Headers部分各个字段的功能
+## 2. Request Headers部分各个字段的功能
 
 通过上面的例子，我们可以看到在Request Headers里面以后很多字段，比如Content-type，Host这些，那么这些字段又有什么意思呢，下面通过表格来介绍一下：
 
@@ -156,7 +153,7 @@ User-Agent里面包含了浏览器客户端的信息，比如：Mozilla/5.0 (Win
 
 这四家机构分别是Microsoft、Mozilla、Apple和Opera SAS，提供的内核则分别叫做Trident、Gecko、WebKit和Presto，推出的主打浏览器则分别叫做Internet Explorer、Firefox、Safari和Opera。我们最常使用的Chrome浏览器就是用的苹果公司的Webkit。国内的一些浏览器也是基于webkit内核的，其所谓的双核中的极速模式就是webkit内核，兼容模式就是ie的trident内核。
 
-### 3. Response Headers部分各个字段的功能
+## 3. Response Headers部分各个字段的功能
 
 Request Headers是请求头，Response Headers是响应头，同样，它也包含了一些字段信息：
 
