@@ -138,7 +138,7 @@ import java.io.InputStreamReader;
 
 /*
  * 字节流转字符流示例
- * System.in 是键盘输入，是InputStream的实例，因为键盘输入都是字符，所以转换成字符流操作更方便
+ * System.in是键盘输入，是InputStream(字节流)的实例，因为键盘输入都是字符，所以转换成字符流操作更方便
  * 普通的Reader读取内容时依然不方便，可以包装成BufferedReader，利用BufferedReader的readLine()方法
  * 可以一次读取一行内容
  */
@@ -235,7 +235,7 @@ public class SystemInRedirect {
 		PrintStream ps = new PrintStream(new FileOutputStream("out.md"));
 		// 将标准输出重定向到ps流
 		System.setOut(ps);
-		// 后面打印的内容就会打印到ps中，而不是Console
+		// 后面打印的内容就会打印到ps中，而不是Console控制台
 		System.out.println("test1");
 		System.out.println(new SystemInRedirect());
 
@@ -249,7 +249,6 @@ public class SystemInRedirect {
 		}
 		s.close();
 	}
-
 }
 ```
 
