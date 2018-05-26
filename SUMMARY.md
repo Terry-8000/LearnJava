@@ -82,6 +82,7 @@
   * [小程序bug](开发/小程序/小程序bug.md)
 * 遇到的问题
   * [Mac下eclipse问题](/开发/遇到的问题/Mac下eclipse问题.md)
+  * [Mac下Github问题](/开发/遇到的问题/Mac下Github问题.md)
   * [Markdown解决方案实例](开发/遇到的问题/Markdown解决方案实例.md)
   * [Spring问题](/开发/遇到的问题/Spring问题.md)
 
