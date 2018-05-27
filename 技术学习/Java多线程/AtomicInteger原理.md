@@ -146,4 +146,37 @@ public final int incrementAndGet() {
 
 ```
 
-那么这个getAndAddInt方法是干嘛的呢，首先来了解一下Unsafe这个类，
+那么这个getAndAddInt方法是干嘛的呢，首先来了解一下Unsafe这个类。
+
+```
+Unsafe类是在sun.misc包下，不属于Java标准。但是很多Java的基础类库，包括一些被广泛使用的高性能开发库都是基于Unsafe类开发的，比如Netty、Cassandra、Hadoop、Kafka等。Unsafe类在提升Java运行效率，增强Java语言底层操作能力方面起了很大的作用。
+Unsafe类使Java拥有了像C语言的指针一样操作内存空间的能力，同时也带来了指针的问题。过度的使用Unsafe类会使得出错的几率变大，因此Java官方并不建议使用的，官方文档也几乎没有。
+通常我们最好也不要使用Unsafe类，除非有明确的目的，并且也要对它有深入的了解才行。
+```
+
+再来说Unsafe的getAndAddInt，通过反编译可以看到实现代码：
+
+```java
+/*
+ * 其中getIntVolatile和compareAndSwapInt都是native方法
+ * getIntVolatile是获取当前的期望值
+ * compareAndSwapInt就是我们平时说的CAS(compare and swap)，通过比较如果内存区的值没有改变，那么就用新值直接给该内存区赋值
+ */
+public final int getAndAddInt(Object paramObject, long paramLong, int paramInt)
+{
+  int i;
+  do
+  {
+    i = getIntVolatile(paramObject, paramLong);
+  } while (!compareAndSwapInt(paramObject, paramLong, i, i + paramInt));
+  return i;
+}
+```
+
+`incrementAndGet`是将自增后的值返回，还有一个方法`getAndIncrement`是将自增前的值返回，分别对应`++i`和`i++`操作。同样的`decrementAndGe`t和`getAndDecrement`则对`--i`和`i--`操作。
+
+
+
+> 参考：
+>
+> java的Unsafe类：https://www.cnblogs.com/pkufork/p/java_unsafe.html
