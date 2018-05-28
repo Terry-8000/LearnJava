@@ -122,8 +122,6 @@ GitHub：[https://github.com/WangJun-SCU/SCUJOO](https://github.com/WangJun-SCU/
 
 数据格式：JSON / XML
 
-中间框架：Zookeeper / Nginx
-
 项目构建：Maven / Tomcat / Git / SVN / Jenkins
 
 ## 自我评价
