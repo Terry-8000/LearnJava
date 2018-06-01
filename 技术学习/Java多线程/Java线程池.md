@@ -131,7 +131,7 @@ public class ThreadPoolTest {
 1. ArrayBlockingQueue：居于数组结构的有界阻塞队列，按照先进先出FIFO原则对元素进行排序；
 2. LinkedBlockingQueue：基于链表结构的阻塞队列，按照FIFO排序原色，吞吐量大于ArrayBlockingQueue，静态工厂方法Executors.newFixedThreadPool()就使用了这个队列；
 3. SynchronousQueue：不存储元素的阻塞队列。每个插入操作必须等到另一个线程调用移除操作，否则插入操作一直处于阻塞状态，吞吐量通常要高于LinkedBlockingQueue，静态工程方法Executors.newCachedThreadPool()就使用了这个队列；
-4. PriorityBlockingQueue：具有优先级的无线阻塞队列。
+4. PriorityBlockingQueue：具有优先级的无限阻塞队列。
 
 ### 3.4 饱和策略
 
