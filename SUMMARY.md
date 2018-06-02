@@ -29,6 +29,7 @@
   * [AtomicInteger原理](/技术学习/Java多线程/AtomicInteger原理.md)
   * [Java锁优化](/技术学习/Java多线程/Java锁优化.md)
   * [Java线程池](/技术学习/Java多线程/Java线程池.md)
+  * [Java中的阻塞队列](/技术学习/Java多线程/Java中的阻塞队列.md)
   * [Lock](/技术学习/Java多线程/Lock.md)
   * [Lock的种类](/技术学习/Java多线程/Lock的种类.md)
 * Java设计模式
