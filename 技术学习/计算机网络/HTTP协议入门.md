@@ -161,3 +161,5 @@ HTTP协议的长连接和短连接，实质上是TCP协议的长连接和短连�
 > https://blog.csdn.net/yezitoo/article/details/78193794
 >
 > https://www.cnblogs.com/ranyonsue/p/5984001.html
+>
+> https://www.cnblogs.com/gotodsp/p/6366163.html
