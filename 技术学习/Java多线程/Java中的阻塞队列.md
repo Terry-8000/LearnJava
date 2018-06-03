@@ -54,5 +54,91 @@ JDK7提供了7个阻塞队列。
 
 链表结构组成的双向阻塞队列。
 
+## 3. ArrayBlockingQueue实现原理 
+
+阻塞队列是通过**通知模式**实现生产者和消费者之间的通信的，当生产者向一个满的队列put数据的时候会被阻塞，当消费者消费了一个队列元素后，会通知生产者当前队列可用。看一下源码：
+
+#### 构造器：
+
+```java
+final Object[] items;  // 存放队列元素的数组
+private final Condition notEmpty;  // 等待take的Condition
+private final Condition notFull;  // 等待put的Condition
+final ReentrantLock lock;  // 可重入锁
+
+public ArrayBlockingQueue(int capacity) {
+  this(capacity, false);
+}
+public ArrayBlockingQueue(int capacity, boolean fair) {
+  if (capacity <= 0)
+    throw new IllegalArgumentException();
+  this.items = new Object[capacity];  // 初始化存放队列的数组
+  lock = new ReentrantLock(fair);  // fair:true 公平锁  fair:false 非公平锁(默认)
+  notEmpty = lock.newCondition();
+  notFull =  lock.newCondition();
+}
+```
+
+#### 存储元素
+
+```java
+public void put(E e) throws InterruptedException {
+  checkNotNull(e);
+  final ReentrantLock lock = this.lock;
+  lock.lockInterruptibly();  // 如果当前线程没有被打断，则获取锁
+  try {
+    while (count == items.length)  // 如果当前队列已满，则阻塞生产者
+      notFull.await();
+    enqueue(e);  // 元素入队
+  } finally {
+    lock.unlock();
+  }
+}
+
+private void enqueue(E x) {
+  final Object[] items = this.items;
+  items[putIndex] = x;
+  if (++putIndex == items.length)
+    putIndex = 0;
+  count++;
+  notEmpty.signal();  // 队列有元素了，通知消费者你可以来取了
+}
+```
+
+#### 取出元素
+
+```java
+public E take() throws InterruptedException {
+  final ReentrantLock lock = this.lock;
+  lock.lockInterruptibly();  // 如果当前线程没有被打断，则获取锁
+  try {
+    while (count == 0)  // 如果当前队列已空，则阻塞消费者
+      notEmpty.await();
+    return dequeue();  // 元素出队
+  } finally {
+    lock.unlock();
+  }
+}
+
+private E dequeue() {
+  final Object[] items = this.items;
+  @SuppressWarnings("unchecked")
+  E x = (E) items[takeIndex];
+  items[takeIndex] = null;
+  if (++takeIndex == items.length)
+    takeIndex = 0;
+  count--;
+  if (itrs != null)
+    itrs.elementDequeued();
+  notFull.signal();  // 刚取出了一个元素，队列肯定不为空，通知生产者你可以来放入元素了
+  return x;
+}
+```
+
+从源码可以看到生产者放入元素的时候，如果队列已满，则阻塞生产者放入元素，直到有消费者消费了队列元素就通知生产者可以放入了。同理，当消费者取出元素的时候，如果队列为空，则阻塞消费者，直到生产者放入了元素则通知消费者你可以继续取元素了。这是一个典型的**通知模式**。
 
 
+
+> 参考：
+>
+> 《Java并发编程的艺术》
