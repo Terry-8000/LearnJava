@@ -175,8 +175,94 @@ public final int getAndAddInt(Object paramObject, long paramLong, int paramInt)
 
 `incrementAndGet`是将自增后的值返回，还有一个方法`getAndIncrement`是将自增前的值返回，分别对应`++i`和`i++`操作。同样的`decrementAndGe`t和`getAndDecrement`则对`--i`和`i--`操作。
 
+## 4. CAS中ABA问题的解决
 
+CAS也并非完美的，它会导致ABA问题，就是说，当前内存的值一开始是A，被另外一个线程先改为B然后再改为A，那么当前线程访问的时候发现是A，则认为它没有被其他线程访问过。在某些场景下这样是存在错误风险的。比如在链表中。
+
+那么如何解决这个ABA问题呢，大多数情况下乐观锁的实现都会通过引入一个版本号标记这个对象，每次修改版本号都会变话，比如使用时间戳作为版本号，这样就可以很好的解决ABA问题。
+
+在JDK中提供了AtomicStampedReference类来解决这个问题，思路是一样的。这个类也维护了一个int类型的标记stamp，每次更新数据的时候顺带更新一下stamp。
+
+**下面我们通过代码演示来看一下AtomicStampedReference的使用：**
+
+```java
+package com.wangjun.thread;
+
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicStampedReference;
+
+public class ABA {
+	
+	// 普通的原子类，存在ABA问题
+	AtomicInteger a1 = new AtomicInteger(10);
+	// 带有时间戳的原子类，不存在ABA问题，第二个参数就是默认时间戳，这里指定为0
+	AtomicStampedReference<Integer> a2 = new AtomicStampedReference<Integer>(10, 0);
+	
+	public static void main(String[] args) {
+		ABA a = new ABA();
+		a.test();
+	}
+	
+	public void test() {
+		new Thread1().start();
+		new Thread2().start();
+		new Thread3().start();
+		new Thread4().start();
+	}
+	
+	class Thread1 extends Thread {
+		@Override
+		public void run() {
+			a1.compareAndSet(10, 11);
+			a1.compareAndSet(11, 10);
+		}
+	}
+	class Thread2 extends Thread {
+		@Override
+		public void run() {
+			try {
+				Thread.sleep(200);  // 睡0.2秒，给线程1时间做ABA操作
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			System.out.println("AtomicInteger原子操作：" + a1.compareAndSet(10, 11));
+		}
+	}
+	class Thread3 extends Thread {
+		@Override
+		public void run() {
+			try {
+				Thread.sleep(500);  // 睡0.5秒，保证线程4先执行
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			int stamp = a2.getStamp();
+			a2.compareAndSet(10, 11, stamp, stamp + 1);
+			stamp = a2.getStamp();
+			a2.compareAndSet(11, 10, stamp, stamp + 1);
+		}
+	}
+	class Thread4 extends Thread {
+		@Override
+		public void run() {
+			int stamp = a2.getStamp();
+			try {
+				Thread.sleep(1000);  // 睡一秒，给线程3时间做ABA操作
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			System.out.println("AtomicStampedReference原子操作:" + a2.compareAndSet(10, 11, stamp, stamp + 1));
+		}
+	}
+}
+```
+
+可以看到使用AtomicStampedReference进行compareAndSet的时候，除了要验证数据，还要验证时间戳。
+
+如果数据一样，但是时间戳不一样，那么这个数据其实也被修改过了。
 
 > 参考：
 >
 > java的Unsafe类：https://www.cnblogs.com/pkufork/p/java_unsafe.html
+>
+> Java CAS 和ABA问题https://www.cnblogs.com/549294286/p/3766717.html
