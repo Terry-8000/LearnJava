@@ -2,7 +2,7 @@
 
 # Java序列化
 
-###什么是序列化？
+## 1. 什么是序列化？
 
 序列化是将一个对象的状态，各属性的值序列化保存起来，然后在合适的时候通过反序列化获得。
 
@@ -10,7 +10,7 @@ Java的序列化是将一个对象表示成字节序列，该字节序列包括�
 
 说白了，就是将对象保存起来，就跟保存字符串数据一样，用到的时候再取出来。任何实现了Serializable接口的类都可以被序列化。
 
-###实现Serializable接口进行序列化
+## 2. 实现Serializable接口进行序列化
 
 ```java
 package com.wangjun.othersOfJava;
@@ -105,7 +105,7 @@ this is test method!
 
 这说明打印出来的是JVM中对应的local的值earth2，而不是序列化的时候的值earth。
 
-### 实现Externalizable接口进行序列化
+## 3. 实现Externalizable接口进行序列化
 
 transient只有对实现了Serializable接口方式的序列化有效，还有一种序列化的方式是实现Externalizable接口，这种实现方式不像实现Serializable接口一样可以帮你自动序列化，它需要在writeExternal方法中手动指定需要序列化的变量并且在readExternal手动取出来，这与是否被transient修饰无关，下面更改一下上面的例子，将Employee类改成：
 
@@ -154,13 +154,13 @@ this is test method!
 
 可以看到能否被序列化跟transient和static修饰都没有关系，只跟writeExternal和readExternal有关系。
 
-### Serializable和Externalizable的区别
+## 4. Serializable和Externalizable的区别
 
 - 对Serializable对象反序列化时，由于Serializable对象完全以它存储的二进制位为基础来构造，因此并不会调用任何构造函数，因此Serializable类无需默认构造函数，但是当Serializable类的父类没有实现Serializable接口时，反序列化过程会调用父类的默认构造函数，因此该父类必需有默认构造函数，否则会抛异常。
 - 对Externalizable对象反序列化时，会先调用类的不带参数的构造方法，这是有别于默认反序列方式的。如果把类的不带参数的构造方法删除，或者把该构造方法的访问权限设置为private、默认或protected级别，会抛出`java.io.InvalidException: no valid constructor`异常，因此Externalizable对象必须有默认构造函数，而且必需是public的。
 - 如果不是特别坚持实现Externalizable接口，那么还有另一种方法。我们可以实现`Serializable`接口，并添加`writeObject()`和`readObject()`的方法。一旦对象被序列化或者重新装配，就会分别调用那两个方法。也就是说，只要提供了这两个方法，就会优先使用它们，而不考虑默认的序列化机制。
 
-### SerialVersionUID的作用
+## 5. SerialVersionUID的作用
 
 上述实现Serializable接口的Employee类中，会有一个警告：
 
