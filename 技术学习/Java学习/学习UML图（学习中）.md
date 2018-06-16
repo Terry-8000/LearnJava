@@ -32,7 +32,7 @@ class Person {
 }
 ```
 
-![](/assets/类图1.png)
+![](../../assets/类图1.png)
 
 **类名：**类名就是类的名称，如果是抽象类的话就在右下角加一个（Abstract）标识。
 
