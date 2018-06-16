@@ -44,7 +44,7 @@ public class ThreadPoolTest {
 
 	public static void main(String[] args) throws InterruptedException, ExecutionException {
 		
-		//生产普通的线程池
+		// 生产普通的线程池
 		ExecutorService threadPool = Executors.newFixedThreadPool(6);
 		// 第一种执行线程的方式
 		threadPool.submit(new MyThread()); 
