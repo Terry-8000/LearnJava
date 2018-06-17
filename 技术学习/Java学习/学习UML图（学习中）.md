@@ -52,7 +52,7 @@ class Person {
 
 UML类图之间的主要关系有6种：继承关系，实现关系，依赖关系，关联关系，聚合关系，组合关系。
 
-**继承关系：**可以用带空心三角形的直线表示。
+**1. 继承关系：**子类和父类之间的关系，可以用带空心三角形的实线表示。
 
 如果一个Teacher类继承上面的Person类：
 
@@ -73,7 +73,55 @@ UML图可以表示为：
 
 ![](../../assets/类图2.png)
 
-继续学习：
+**2. 实现关系：**类和接口之间的关系，可以用带空心三角形的虚线表示。
+
+如下一个Dog类和一个Cat类实现了Animal接口：
+
+```java
+public interface Animal {
+	public void eat();
+}
+```
+
+```java
+public class Dog implements Animal {
+	@Override
+	public void eat() {
+		System.out.println("狗狗吃狗粮");
+	}
+}
+```
+
+```java
+public class Cat implements Animal {
+	@Override
+	public void eat() {
+		System.out.println("咪咪吃猫粮");
+	}
+}
+```
+
+UML可以表示为：
+
+![](../../assets/UML继承.png)
+
+**3. 依赖关系：**
+
+
+
+**4. 关联关系：**
+
+
+
+**5. 聚合关系：**
+
+
+
+**6. 组合关系：**
+
+
+
+
 
 https://blog.csdn.net/garfielder007/article/details/54427742
 
