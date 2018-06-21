@@ -3,7 +3,7 @@
 ## Summary
 
 * [Introduction](README.md)
-* [MyResume](MyResume.md)
+* [MyResume](MyResume-.md)
 
 ## 技术学习
 
